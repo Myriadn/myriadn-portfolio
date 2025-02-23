@@ -1,0 +1,426 @@
+/* Warna utama menggunakan palet dari colorhunt.co */
+:root {
+  --primary-color: #2b3467;
+  --secondary-color: #bad7e9;
+  --accent-color: #eb455f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Bagian Body */
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background: #f0f4f8;
+  color: #2d3436;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Bagian Header */
+header {
+  width: 100%;
+  background: var(--primary-color);
+  padding: 1rem 0;
+}
+
+nav {
+  max-width: 1750px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.logo-main {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.logo-subtitle {
+  font-size: 0.9rem;
+  color: white;
+  letter-spacing: 1.5px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+  /* Animasi hover */
+  color: var(--accent-color) !important;
+}
+
+/* Dropdown Menu */
+.dropdown-parent {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: none;
+  padding: 0;
+  list-style: none;
+  width: max-content; /* Menyesuaikan lebar dengan konten */
+  min-width: 100px; /* Lebar minimum */
+}
+
+.dropdown-menu li {
+  padding: 0;
+  margin: 0;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu a {
+  color: var(--primary-color) !important;
+  padding: 0.7rem 1.5rem;
+  display: block;
+  text-decoration: none;
+  white-space: nowrap; /* Mencegah text wrapping */
+}
+
+/* Efek hover gelap */
+.dropdown-menu li:hover {
+  background: #4f60be; /* Warna gelap dari palette */
+  border-radius: inherit;
+}
+
+.dropdown-menu li:hover a {
+  color: white !important;
+}
+
+.dropdown-parent:hover .dropdown-menu {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+/* Animasi untuk dropdown */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-toggle {
+  display: none;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Bagian main */
+main {
+  flex: 1; /* 4 */
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  padding: 2rem 5%;
+  grid-row: 2;
+}
+
+/* Bagian konten */
+#content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Jarak antar artikel */
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border: 2px dashed var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--accent-color); /* Warna border berubah saat hover */
+  transform: translateY(-3px);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px dashed var(--primary-color);
+  display: inline-block;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+  text-align: justify;
+  margin-bottom: 0.5rem;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+}
+
+.project-image {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  padding: 1rem;
+  color: var(--primary-color);
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem 1rem;
+}
+
+.project-icon {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.project-icon:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+/* Bagian profile */
+.profile-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border: 2px dashed var(--primary-color); /* Border dashed */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card:hover {
+  border-color: var(--accent-color); /* Warna border berubah saat hover */
+}
+
+.profile-card img {
+  width: 175px; /* Sesuaikan ukuran */
+  height: 175px; /* Sesuaikan ukuran */
+  object-fit: cover; /* Agar gambar tidak terdistorsi */
+  border-radius: 50%; /* Untuk bentuk lingkaran */
+  margin: 0 auto 1rem; /* Pusatkan gambar */
+  border: 3px solid var(--primary-color); /* Opsional: tambahkan border */
+}
+
+/* Bagian footer */
+footer {
+  background: var(--primary-color);
+  color: white;
+  padding: 1.5rem 5%;
+  margin-top: auto;
+  grid-row: 3;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left p {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.social-icon {
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Jika layar lebih kecil dari 768px */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem;
+  }
+
+  .logo-container {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    right: 1rem;
+    top: 70px;
+    background: var(--primary-color);
+    width: auto;
+    padding: 1rem;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links li {
+    margin: 0;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .nav-links li:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links li:active {
+    transform: scale(0.98);
+    background: var(--accent-color);
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: white;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: none;
+    padding: 0;
+    list-style: none;
+    width: max-content;
+    min-width: 100px;
+  }
+
+  .dropdown-menu li {
+    padding: 0;
+    margin: 0;
+    transition: all 0.2s ease;
+  }
+
+  .dropdown-menu a {
+    color: var(--primary-color) !important;
+    padding: 0.7rem 1.5rem;
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .dropdown-parent:hover .dropdown-menu {
+    display: block;
+    animation: slideDown 0.3s ease;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  #content {
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+    padding-bottom: 0.4rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .card:not(:last-child)::after {
+    bottom: -0.75rem;
+  }
+
+  .profile-card img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .social-icon {
+    margin: 0 0.8rem;
+  }
+}
